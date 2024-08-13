@@ -21,6 +21,8 @@ spec:
               value: {{.Release.Name}}-redis
             - name: SLOW_START
               value: '{{ .Values.backend_SLOW_START }}'
+            - name: EXTRA_TEXT
+              value: {{ .Values.backend_EXTRA_TEXT | quote }}
           ports:
             - name: http
               containerPort: 80
