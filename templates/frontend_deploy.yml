@@ -4,7 +4,7 @@ metadata:
   name: frontend
 spec:
   revisionHistoryLimit: 0
-  replicas: 4
+  replicas: {{ .Values.frontendReplicas }}
   selector:
     matchLabels:
       app: frontend
@@ -15,14 +15,14 @@ spec:
     spec:
       containers:
         - name: main
-          image: ghcr.io/ondrejsika/counter-frontend
+          image: {{ .Values.frontendImage }}
           env:
             - name: API_ORIGIN
               value: http://backend
             - name: FONT_COLOR
-              value: 'white'
+              value: {{ .Values.frontend_FONT_COLOR | quote }}
             - name: BACKGROUND_COLOR
-              value: '#3A5D87'
+              value: {{ .Values.frontend_BACKGROUND_COLOR | quote }}
           ports:
             - name: http
               containerPort: 3000
