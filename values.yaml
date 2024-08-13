@@ -10,4 +10,4 @@ frontendReplicas: 4
 frontendImage: ghcr.io/ondrejsika/counter-frontend
 
 frontend_FONT_COLOR: 'white'
-frontendBACKGROUND_COLOR: '#3A5D87'
+frontend_BACKGROUND_COLOR: '#3A5D87'
